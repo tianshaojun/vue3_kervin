@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="box"></div>
+  <script>
+    var obj = {}
+    Object.defineProperty(obj, "myname", {
+      get () {
+        console.log("get");
+        return box.innerHTML;
+      },
+      set (value) {
+        console.log("set", value);
+        box.innerHTML = value;
+      }
+    })
+
+    //vue2 
+    //缺点
+    //1.只能一个一个属性进行拦截
+    //2.只能监测对象,不能监测数组、set结构、map结构
+  </script>
+</body>
+
+</html>
