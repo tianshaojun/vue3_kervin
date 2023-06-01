@@ -9,8 +9,23 @@
 </head>
 
 <body>
+  <div id="box"></div>
   <script>
-    //ES6 proxy 
+    //ES6 proxy
+    var obj = {}
+    var vm = new Proxy(obj, {
+      get(obj, key) {
+        console.log("get");
+        return obj[key]
+      },
+      set(obj, key, value) {
+        console.log("set");
+        obj[key] = value;
+        box.innerHTML = value;
+      }
+    })
+
+    //可以对多个属性进行拦截
   </script>
 </body>
 

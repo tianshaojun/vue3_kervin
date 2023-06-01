@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        {{myname + '-aaaa'}}
+        {{isLogin?"已登录":"未登录"}}
+        {{myname.slice(0,1)}}
+        {{10+20}}
+    </div>
+</body>
+<script>
+    var obj = {
+        data() {
+            return {
+                myname: "kervin",    
+                isLogin: true
+            }
+        }
+    }
+    var app = Vue.createApp(obj).mount("#box");
+</script>
+
+</html>

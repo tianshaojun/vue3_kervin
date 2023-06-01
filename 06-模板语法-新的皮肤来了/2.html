@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div v-bind:class="color">11111111111</div>
+        <div :class="isLogin ? 'red' : 'yellow'">22222222222</div>
+
+        <img :src="url" alt="" width="300">
+        <img :src="url" alt="" :width="width">
+
+        <img v-bind="imgobj" alt="">
+
+        <button :disabled="isDisabled">click</button>
+    </div>
+</body>
+<script>
+    var obj = {
+        data() {
+            return {
+                isLogin: true,
+                color: 'yellow',
+                url: 'https://pic.maizuo.com/usr/movie/fd425ee84693767ce4ea529b6cf62e7c.jpg?x-oss-process=image/quality,Q_70',
+                // https://pic.maizuo.com/usr/movie/f4e9fd5dbe94bf4c30a56b05bfc14fea.jpg?x-oss-process=image/quality,Q_70
+                isDisabled: false,
+                width: 300,
+                imgobj: {
+                    width: 200,
+                    src: 'https://pic.maizuo.com/usr/movie/f4e9fd5dbe94bf4c30a56b05bfc14fea.jpg?x-oss-process=image/quality,Q_70'
+                }
+            }
+        }
+    }
+    var app = Vue.createApp(obj).mount("#box");
+</script>
+
+</html>
