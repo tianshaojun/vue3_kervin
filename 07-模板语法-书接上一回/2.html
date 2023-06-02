@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        {{myname}}
+        <!-- <button onclick="handleClick()">click</button> -->
+        <!-- 指令 -->
+        <!-- <div :class="isShow?'':'hidden'">我是显示或者隐藏</div> -->
+        <!-- <button v-on:click="handleClick()">click</button> -->
+        <button @click="handleClick()">click</button>
+
+        <div v-show="isShow">我是显示或者隐藏</div>
+        <div v-if="isShow">我是创建或者删除</div>
+
+        <!-- v-for指令 -->
+        <ul>
+            <li v-for="item,index in list">
+                {{item}}
+                <b>{{index}}</b>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // function handleClick(){
+        //     console.log("click")
+        //     app.myname = "xiaoming"
+        // }
+        var obj = {
+            data() {
+                return {
+                    myname: "kerwin",
+                    isShow: true,
+
+                    list: ["aaa", "bbb", "ccc"]
+                }
+            },
+            methods: {
+                handleClick() {
+                    console.log("click", this)
+                    this.myname = "xiaoming"
+                    this.isShow = !this.isShow
+                }
+            }
+        }
+        Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>
