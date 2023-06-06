@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <!-- <div style="background:red;">赵钱孙李</div> -->
+
+        <!-- <div :style="{backgroundColor:'red'}">赵钱孙李</div> -->
+        <!-- <div :style="{'background-color':color}">赵钱孙李</div> -->
+        <div :style="styleObj">赵钱孙李</div>
+
+        <div :style="imgObj"></div>
+        <button @click="handleAjax()">click</button>
+    </div>
+    <script>
+        //background:red
+
+        // url:https://static.maizuo.com/pc/v5/usr/movie/862ab6736237acd11599e5eecbbc83d7.jpg?x-oss-process=image/quality,Q_70
+        var obj = {
+            data() {
+                return {
+                    // color:'yellow'
+                    styleObj: {
+                        backgroundColor: 'red',
+                        fontSize: "20px"
+                    },
+                    imgObj: {
+                        width: "200px",
+                        height: "200px",
+                        backgroundSize: "cover"
+                    }
+                }
+            },
+            methods: {
+                handleAjax() {
+                    this.imgObj.backgroundImage = "url(https://static.maizuo.com/pc/v5/usr/movie/862ab6736237acd11599e5eecbbc83d7.jpg?x-oss-process=image/quality,Q_70)"
+                }
+            }
+        }
+        var app = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>
