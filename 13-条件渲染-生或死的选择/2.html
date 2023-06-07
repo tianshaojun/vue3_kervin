@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="item in datalist">
+                {{item.title}}
+                <div v-if="item.state===0">
+                    <b>未付款</b>
+                </div>
+                <div v-else-if="item.state===1">
+                    <b>待发货</b>
+                </div>
+                <div v-else-if="item.state===2">
+                    <b>已结束</b>
+                </div>
+                <div v-else>
+                    <b>已取消</b>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // v-if v-else-if v-else
+        var obj = {
+            data() {
+                return {
+                    datalist: [
+                        {
+                            title: "手机",
+                            state: 0
+                        },
+                        {
+                            title: "衣服",
+                            state: 1
+                        },
+                        {
+                            title: "aaa",
+                            state: 2
+                        },
+                        {
+                            title: "bbbb",
+                            state: 3
+                        },
+                        {
+                            title: "手机1",
+                            state: 0
+                        },
+                        {
+                            title: "衣服2",
+                            state: 1
+                        },
+                        {
+                            title: "aaa1",
+                            state: 2
+                        },
+                        {
+                            title: "bbbb2",
+                            state: 3
+                        }
+                    ]
+                }
+            }
+        }
+        var app = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>

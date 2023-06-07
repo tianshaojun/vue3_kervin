@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="(value,key,index) of itemObj">
+                {{key}}----{{value}} ---{{index}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="item in 10">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        // v-if v-else-if v-else
+
+        /*
+            1. 小括号
+            2. 支持解构
+            3. in === of (js迭代器)
+        
+        */
+        var obj = {
+            data() {
+                return {
+                    itemObj: {
+                        name: "kerwin",
+                        age: 100,
+                        location: "dalian"
+                    }
+                }
+            }
+        }
+        var app = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>
