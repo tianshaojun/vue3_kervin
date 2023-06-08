@@ -12,7 +12,7 @@
 <body>
     <div id="box">
         <ul>
-            <li v-for="({title,state},index) of datalist">
+            <li v-for="({title,state,id},index) of datalist" :key="id">
                 {{title}}--{{index}}
                 <div v-if="state===0">
                     <b>未付款</b>
@@ -44,35 +44,43 @@
                     datalist: [
                         {
                             title: "手机",
-                            state: 0
+                            state: 0,
+                            id: 1
                         },
                         {
                             title: "衣服",
-                            state: 1
+                            state: 1,
+                            id: 2
                         },
                         {
                             title: "aaa",
-                            state: 2
+                            state: 2,
+                            id: 3
                         },
                         {
                             title: "bbbb",
-                            state: 3
+                            state: 3,
+                            id: 4
                         },
                         {
                             title: "手机1",
-                            state: 0
+                            state: 0,
+                            id: 5
                         },
                         {
                             title: "衣服2",
-                            state: 1
+                            state: 1,
+                            id: 6
                         },
                         {
                             title: "aaa1",
-                            state: 2
+                            state: 2,
+                            id: 7
                         },
                         {
                             title: "bbbb2",
-                            state: 3
+                            state: 3,
+                            id: 8
                         }
                     ]
                 }
