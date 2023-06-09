@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleClick">click</button>
+        <ul>
+            <li v-for="item in datalist" :key="item">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+
+        var obj = {
+            data() {
+                return {
+                    datalist: ["111", "222", "333"]
+                }
+            },
+            methods: {
+                handleClick() {
+                    // this.datalist = this.datalist.map(item => "kerwin" + item)
+
+                    this.datalist = this.datalist.concat(["444", "555", "666"])
+
+                    // filter
+                }
+            }
+        }
+        var app = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>
