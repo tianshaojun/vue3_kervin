@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext" @input="handleInput">
+        <ul>
+            <li v-for="item in datalist" :key="item">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var obj = {
+            data() {
+                return {
+                    mytext: "",
+                    datalist: ["aaa", "abb", "aab", "bcc", "abc", "bcd", "add", "acd"],
+                    baklist: ["aaa", "abb", "aab", "bcc", "abc", "bcd", "add", "acd"]
+                }
+            },
+
+            methods: {
+                handleInput() {
+                    // console.log(this.mytext)
+                    this.datalist = this.baklist.filter(item => item.includes(this.mytext))
+                }
+            }
+        }
+        Vue.createApp(obj).mount("#box")
+
+        // 过滤
+        var arr = [1, 2, 3, 4, 5]
+
+        var list = arr.filter(item => item > 3)
+
+        console.log(list, arr)
+    </script>
+</body>
+
+</html>
