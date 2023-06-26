@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        {{mytext}}
+        <textarea v-model="mytext" cols="30" rows="10"></textarea>
+
+
+        <h2>
+            登录页面
+        </h2>
+        <div>
+            <input type="text" v-model="username">
+            <input type="checkbox" v-model="isChecked">记住用户名
+            <button>登录</button>
+        </div>
+        <h2>
+            调查问卷/个人信息/爱好
+        </h2>
+        <div>
+            你喜欢的运动:{{favList}}
+            <div>
+                <input type="checkbox" v-model="favList" value="篮球">篮球
+                <input type="checkbox" v-model="favList" value="足球">足球
+                <input type="checkbox" v-model="favList" value="乒乓球">乒乓球
+                <button>提交</button>
+            </div>
+        </div>
+        <div>
+            你最喜欢的运动:{{picked}}
+            <div>
+                <input type="radio" v-model="picked" value="篮球">篮球
+                <input type="radio" v-model="picked" value="足球">足球
+                <input type="radio" v-model="picked" value="乒乓球">乒乓球
+                <button>提交</button>
+            </div>
+        </div>
+
+        <h2>订单筛选</h2>
+        {{selected}}
+        <!-- <select v-model="selected">
+            <option>全部订单</option>
+            <option>未付款</option>
+            <option>已取消</option>
+            <option>已完成</option>
+        </select> -->
+        <select v-model="selected">
+            <option value="all">全部订单</option>
+            <option value="0">未付款</option>
+            <option value="1">已取消</option>
+            <option value="2">已完成</option>
+        </select>
+    </div>
+
+    <script>
+        var obj = {
+            data() {
+                return {
+                    mytext: "",
+                    username: "",
+                    isChecked: true,
+                    favList: [],
+                    picked: "足球",
+                    selected: "all"
+                }
+            }
+        }
+
+        var app = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>
