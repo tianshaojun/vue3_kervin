@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext">
+        <select v-model="obj.year">
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
+        <select v-model="obj.month">
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <select v-model="obj.day">
+            <option value="31">31</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+    </div>
+
+    <script>
+        var obj = {
+            data() {
+                return {
+                    mytext: "",
+                    obj: {
+                        year: 2023,
+                        month: 12,
+                        day: 31
+                    }
+                }
+            },
+
+            watch: {
+                // mytext:function(){}
+                mytext: "anyfunc",
+                // "obj.year":"anyfunc",
+                // "obj.month":"anyfunc",
+                // "obj.day":"anyfunc"
+
+                obj: {
+                    handler(value) {
+                        console.log(value, "ajax")
+                    },
+                    deep: true, //复杂对象进行深度监听
+                    immediate: true
+                }
+            },
+            methods: {
+                anyfunc(value, oldvalue) {
+                    console.log(value)
+                }
+            }
+        }
+        Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>
