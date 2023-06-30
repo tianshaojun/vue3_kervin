@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleClick">click</button>
+
+        <ul>
+            <li v-for="item in datalist">
+                {{item.name}}-{{item.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+
+        var obj = {
+            data() {
+                return {
+                    datalist: []
+                }
+            },
+            methods: {
+                handleClick() {
+                    //基于promise 
+                    // fetch("http://localhost:3000/list")
+                    //     .then(res => res.json())
+                    //     .then(res => {
+                    //         console.log(res)
+                    //         this.datalist = res
+                    //     })
+
+                    // fetch("http://localhost:3000/list", {
+                    //     method: "post", //post,POST
+                    //     headers: {
+                    //         "content-type": "application/x-www-form-urlencoded",
+                    //     },
+                    //     body: "name=xiaoming&age=19"
+                    // }).then(res => res.json())
+                    //     .then(res => {
+                    //         console.log(res)
+                    //     })
+
+                    // fetch("http://localhost:3000/list", {
+                    //     method: "post", //post,POST
+                    //     headers: {
+                    //         "content-type": "application/json",
+                    //     },
+                    //     body: JSON.stringify({
+                    //         name: "gandaner",
+                    //         age: 20
+                    //     })
+                    // }).then(res => res.json())
+                    //     .then(res => {
+                    //         console.log(res)
+                    //     })
+
+                    // fetch("http://localhost:3000/list/5", {
+                    //     method: "put", //post,POST
+                    //     headers: {
+                    //         "content-type": "application/json",
+                    //     },
+                    //     body: JSON.stringify({
+                    //         name: "gandaner1111",
+                    //         age: 200
+                    //     })
+                    // }).then(res => res.json())
+                    //     .then(res => {
+                    //         console.log(res)
+                    //     })
+
+                    fetch("http://localhost:3000/list/5", {
+                        method: "delete", //post,POST
+                    }).then(res => res.json())
+                        .then(res => {
+                            console.log(res)
+                        })
+
+                }
+            }
+        }
+        var app = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>

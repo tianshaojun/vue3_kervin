@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script src="axios.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleClick">click</button>
+
+        <ul>
+            <li v-for="item in datalist">
+                {{item.name}}-{{item.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+
+        var obj = {
+            data() {
+                return {
+                    datalist: []
+                }
+            },
+            methods: {
+                handleClick() {
+                    //console.log(axios)
+                    //get
+                    // axios.get("http://localhost:3000/list").then(res => {
+                    //     console.log(res.data)
+                    //     this.datalist = res.data
+                    // }).catch(err => {
+                    //     console.log(err)
+                    // })
+
+                    //post-json
+                    // axios.post("http://localhost:3000/list", {
+                    //     name: "gangdaner999",
+                    //     age: 20
+                    // }).then(res => {
+                    //     console.log(res.data)
+                    // }).catch(err => {
+                    //     console.log(err)
+                    // })
+
+                    //post-form
+                    // axios.post("http://localhost:3000/list", "name=zhugeshanzhen&age=30").then(res => {
+                    //     console.log(res.data)
+                    // }).catch(err => {
+                    //     console.log(err)
+                    // })
+
+                    //put
+                    // axios.put("http://localhost:3000/list/6", "name=zhugeshanzhen111&age=300").then(res => {
+                    //     console.log(res.data)
+                    // }).catch(err => {
+                    //     console.log(err)
+                    // })
+
+                    //delete
+                    // axios.delete("http://localhost:3000/list/6").then(res => {
+                    //     console.log(res.data)
+                    // }).catch(err => {
+                    //     console.log(err)
+                    // })
+
+                    axios({
+                        method: "delete",
+                        url: "http://localhost:3000/list/5",
+                    }).then(res => {
+                        console.log(res)
+                    })
+
+                }
+            }
+        }
+        var app = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>

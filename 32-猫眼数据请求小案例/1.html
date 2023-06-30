@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script src="axios.js"></script>
+    <style>
+        li {
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        li img {
+            width: 100px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleClick">click</button>
+
+        <ul>
+            <li v-for="item of datalist" :key="item.id">
+                <img :src="item.img" />
+                <div>{{item.nm}}</div>
+                <div>评分:{{item.mk}}</div>
+                <div>{{item.desc}}</div>
+                <div>{{item.showInfo}}</div>
+            </li>
+        </ul>
+    </div>
+    <script>
+
+        var obj = {
+            data() {
+                return {
+                    datalist: []
+                }
+            },
+            methods: {
+                handleClick() {
+
+                    axios.get("./test.json").then(res => {
+                        // console.log(res.data.data.hot)
+                        this.datalist = res.data.data.hot
+                    })
+                }
+            }
+        }
+        var app = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>
