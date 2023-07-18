@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+
+    <div id="box">
+        <kerwin-navbar></kerwin-navbar>
+        <kerwin-sidebar></kerwin-sidebar>
+        <kerwin-global-button></kerwin-global-button>
+    </div>
+
+    <script>
+        //扩展html元素，封装可重用的代码
+        var obj = {
+            data() {
+                return {}
+            }
+        }
+
+        var app = Vue.createApp(obj)
+
+        //定义全局组件
+        app.component("kerwin-navbar", {
+            //模板
+            template: `
+                <nav style="background:yellow;">
+                    <ul>
+                       <li v-for="item in datalist">
+                        {{item}}
+                       </li>    
+                    </ul>
+                    <kerwin-global-button></kerwin-global-button>
+                </nav>
+            `,
+            data() {
+                return {
+                    datalist: ["首页", "新闻", "产品"]
+                }
+            }
+        })
+
+        app.component("kerwin-global-button", {
+            template: `<div >
+                        <button style="background:blue;">全局</button>    
+            </div>`
+        })
+
+        app.component("kerwin-sidebar", {
+            template: `
+                <aside>
+                    我是侧边栏
+                    <kerwin-global-button></kerwin-global-button>
+                    <kerwin-button></kerwin-button>   
+                </aside>
+            `,
+            //局部组件定义
+            components: {
+                "kerwin-button": {
+                    template: `<div >
+                        <button style="background:red;">联系</button>    
+                    </div>`,
+                    //watch,computed,methods
+                }
+            }
+        })
+        app.mount("#box")
+    </script>
+</body>
+
+</html>
