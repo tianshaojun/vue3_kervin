@@ -7,6 +7,9 @@ import { createApp } from 'vue'
 // import App from './03-属性透传/App.vue'
 // import App from './04-属性透传案例/App.vue'
 // import App from './05-子传父/App.vue'
-import App from './06-子传父案例/App.vue'
+// import App from './06-子传父案例/App.vue'
+// import App from './07-$refs/App.vue'
+// import App from './08-$parent与$root/App.vue'
+import App from './08-$parent与$root/demo/App.vue'
 
 createApp(App).mount('#app')
