@@ -10,6 +10,9 @@ import { createApp } from 'vue'
 // import App from './06-子传父案例/App.vue'
 // import App from './07-$refs/App.vue'
 // import App from './08-$parent与$root/App.vue'
-import App from './08-$parent与$root/demo/App.vue'
+// import App from './08-$parent与$root/demo/App.vue'
+// import App from './09-provide&inject/App.vue'
+import App from './10-订阅发布/App.vue'
+
 
 createApp(App).mount('#app')
