@@ -14,7 +14,11 @@ import { createApp } from 'vue'
 // import App from './09-provide&inject/App.vue'
 // import App from './10-订阅发布/App.vue'
 // import App from './11-动态组件/App.vue'
-import App from './12-组件v-model/App.vue'
+// import App from './12-组件v-model/App.vue'
+// import App from './13-异步组件/App.vue'
+// import App from './14-插槽/App.vue'
+// import App from './14-插槽/demo/App.vue'
+import App from './15-具名插槽/App.vue'
 
 
 createApp(App).mount('#app')
