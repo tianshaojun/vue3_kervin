@@ -23,7 +23,13 @@ import { createApp } from 'vue'
 // import App from './17-生命周期-创建/App.vue'
 // import App from './18-生命周期-更新/App.vue'
 // import App from './19-生命周期-销毁/App.vue'
-import App from './20-swiper与vue/App.vue'
+// import App from './20-swiper与vue/App.vue'
+
+
+// import App from './28-vca/App.vue'
+// import App from './29-reactive/App.vue'
+// import App from './30-ref/App.vue'
+import App from './30-ref/App1.vue'
 
 
 createApp(App).mount('#app')
