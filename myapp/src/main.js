@@ -29,7 +29,12 @@ import { createApp } from 'vue'
 // import App from './28-vca/App.vue'
 // import App from './29-reactive/App.vue'
 // import App from './30-ref/App.vue'
-import App from './30-ref/App1.vue'
+// import App from './30-ref/App1.vue'
+// import App from './31-toRefs/App.vue'
+// import App from './31-toRefs/App1.vue'
+// import App from './32-计算属性/App.vue'
+// import App from './32-计算属性/App-模糊搜索.vue'
+import App from './32-计算属性/App-复用逻辑-自定义hooks.vue'
 
 
 createApp(App).mount('#app')
