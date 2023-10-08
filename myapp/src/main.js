@@ -35,7 +35,9 @@ import { createApp } from 'vue'
 // import App from './32-计算属性/App.vue'
 // import App from './32-计算属性/App-模糊搜索.vue'
 // import App from './32-计算属性/App-复用逻辑-自定义hooks.vue'
-import App from './33-watch/App.vue'
+// import App from './33-watch/App.vue'
+import App from './34-watch案例/App.vue'
+
 
 
 createApp(App).mount('#app')
