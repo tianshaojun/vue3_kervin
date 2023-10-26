@@ -39,9 +39,17 @@ import { createApp } from 'vue'
 // import App from './34-watch案例/App.vue'
 // import App from './35-属性/App.vue'
 // import App from './36-provide与inject/App.vue'
-import App from './37-生命周期/App.vue'
+// import App from './37-生命周期/App.vue'
+// import App from './38-setup语法糖/App.vue'
+// import App from './38-setup语法糖/demo/App.vue'
+
+
+//vue-router相关
+import router from './2-VueRouter/router'
+import App from './2-VueRouter/App.vue'
 
 
 
-
-createApp(App).mount('#app')
+var app = createApp(App)
+app.use(router)  //注册路由插件
+app.mount('#app')
