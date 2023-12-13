@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "test": "vitest",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -15,10 +16,14 @@
     "js-web-screen-shot": "^1.9.9-rc.5",
     "swiper": "^10.3.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "pinia": "^2.0.34"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.5"
+    "@testing-library/vue": "^7.0.0",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "jsdom": "^21.1.1",
+    "vite": "^4.2.0",
+    "vitest": "^0.30.1"
   }
 }

@@ -1,4 +1,3 @@
-
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Films from '../views/Films.vue'
 import Cinemas from '../views/Cinemas.vue'
@@ -14,7 +13,7 @@ const routes = [
     // },
     {
         path: "/films",
-        name: "myfilms", // 命名路由
+        name: "myfilms", //命名路由
         component: Films,
         // children: [
         //     {
@@ -31,15 +30,13 @@ const routes = [
         //     }
         // ]
     },
-
-
     {
         path: "/cinemas",
         component: Cinemas
     },
     {
         path: "/center",
-        alias: "/wode",// 别名
+        alias: "/wode", //别名
         component: Center
     },
     {
@@ -59,7 +56,6 @@ const router = createRouter({
     history: createWebHashHistory(), // hash  #/film #/center
     // history /film /center
     routes, // `routes: routes` 的缩写
-
 })
 
 export default router
