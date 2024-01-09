@@ -3,18 +3,19 @@
         <!-- 插槽-路由容器 -->
         <router-view></router-view>
 
-        <!-- <Tabbar></Tabbar> -->
+        <Tabbar></Tabbar>
     </div>
 </template>
 
 <script>
-// import Tabbar from './components/Tabbar.vue'
+import Tabbar from './components/Tabbar.vue'
 export default {
     components: {
-        // Tabbar
+        Tabbar
     }
 }
 </script>
+
 <style>
 * {
     margin: 0;

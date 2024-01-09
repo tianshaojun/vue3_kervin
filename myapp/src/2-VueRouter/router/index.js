@@ -2,10 +2,11 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Films from '../views/Films.vue'
 import Cinemas from '../views/Cinemas.vue'
 import Center from '../views/Center.vue'
-// import NotFound from '../views/NotFound.vue'
+import NotFound from '../views/NotFound.vue'
 
-// import Nowplaying from '../views/films/Nowplaying.vue'
-// import Comingsoon from '../views/films/Comingsoon.vue'
+import Nowplaying from '../views/films/Nowplaying.vue'
+import Comingsoon from '../views/films/Comingsoon.vue'
+
 const routes = [
     // {
     //     path:"/",
@@ -15,20 +16,20 @@ const routes = [
         path: "/films",
         name: "myfilms", //命名路由
         component: Films,
-        // children: [
-        //     {
-        //         path: "/films/nowplaying",
-        //         component: Nowplaying
-        //     },
-        //     {
-        //         path: "comingsoon",
-        //         component: Comingsoon
-        //     },
-        //     {
-        //         path: "/films",
-        //         redirect: '/films/nowplaying'
-        //     }
-        // ]
+        children: [
+            {
+                path: "/films/nowplaying",
+                component: Nowplaying
+            },
+            {
+                path: "comingsoon",
+                component: Comingsoon
+            },
+            {
+                path: "/films",
+                redirect: '/films/nowplaying'
+            }
+        ]
     },
     {
         path: "/cinemas",
@@ -46,12 +47,12 @@ const routes = [
         //     name: "myfilms"
         // }
     },
-    // {   path: '/:pathMatch(.*)*', 
-    // {
-    //     path: '/:pathMatch(.*)*',  // /aaa /bbb /ccc  /aaa/a1/a2
-    //     component: NotFound
-    // }
+    {
+        path: '/:pathMatch(.*)*',
+        component: NotFound
+    }
 ]
+
 const router = createRouter({
     history: createWebHashHistory(), // hash  #/film #/center
     // history /film /center
