@@ -80,15 +80,15 @@ const router = createRouter({
     routes, // `routes: routes` 的缩写
 })
 
-router.beforeEach(async (to, from, next) => {
-    let isAuthenticated = await localStorage.getItem("token")
+// router.beforeEach(async (to, from, next) => {
+//     let isAuthenticated = await localStorage.getItem("token")
 
-    // console.log(to.fullPath);
+//     // console.log(to.fullPath);
 
-    if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
-    else next()
+//     if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
+//     else next()
 
-})
+// })
 
 // router.beforeEach(async (to, from, next) => {
 //     let isAuthenticated = await localStorage.getItem("token")

@@ -9,36 +9,25 @@
         </ul>
     </div>
 </template>
-<script>
-export default {
-    mounted() {
-        // console.log("接受上一个页面传来的参数", this.$route.params.myid, "带着id参数请求后端接口")
 
-        console.log("接受上一个页面传来的参数", this.$route.query.myid, "带着id参数请求后端接口")
-    },
-    methods: {
-        handleBack() {
-            this.$router.back() //返回
-            // this.$router.go(-1)
+<script setup>
+import { onMounted } from 'vue';
+import { useRoute, useRouter, onBeforeRouteUpdate } from 'vue-router'
+const route = useRoute()
+const router = useRouter()
+onMounted(() => {
+    console.log("接受上一个页面传来的参数", route.params.myid, "带着id参数请求后端接口")
+})
 
-            //this.$router.forward()
-            //this.$router.go(1)
-        },
-
-        handleClick() {
-            this.$router.push(`/detail/6789`)
-        }
-    },
-
-    watch: {
-        // "$route.params": function () {
-        //     console.log("接受猜你喜欢传来的参数", this.$route.params.myid, "带着id参数请求后端接口")
-        // }
-    }
-
-    // beforeRouteUpdate(to, from) {
-    //     // console.log("beforeRouteUpdate",to)
-    //     console.log("接受猜你喜欢传来的参数", to.params.myid, "带着id参数请求后端接口")
-    // }
+const handleBack = () => {
+    router.back()
 }
+
+const handleClick = () => {
+    router.push(`/detail/6789`)
+}
+
+onBeforeRouteUpdate((to, from) => {
+    console.log("接受上一个页面传来的参数", to.params.myid, "带着id参数请求后端接口")
+})
 </script>

@@ -5,14 +5,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    methods: {
-        handleLogin() {
-            localStorage.setItem("token", "aaaaaaa")
-
-            this.$router.push("/")
-        }
-    }
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const handleLogin = () => {
+    localStorage.setItem("token", "kerwin")
+    router.push("/")
 }
 </script>
